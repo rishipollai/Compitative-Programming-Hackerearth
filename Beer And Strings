@@ -1,0 +1,35 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+	ios_base::sync_with_stdio(0);
+       cin.tie(0);cout.tie(0);
+       
+	string s;
+	cin >>s;
+	map<char,int> m;
+	for(int i=0;i<s.size();i++){
+		m[s[i]]++;
+	}
+	int n;
+	cin >>n;
+	int tmp=0;
+	while(n--){
+		string p;
+		cin>>p;
+		map<char,int> mm;
+		for(int i=0;i<p.size();i++){
+			mm[p[i]]++;
+		}
+		int ct=0;
+		for(int i=0;i<p.size();i++){
+			//cout<<m[p[i]]<<" "<<mm[p[i]]<<endl;
+			if(m[p[i]]<mm[p[i]]){
+				ct=1;
+				break;
+			}
+		}
+		if(ct==0) tmp++;
+	}
+	cout<<tmp;
+}
