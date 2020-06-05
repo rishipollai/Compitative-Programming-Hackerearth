@@ -1,0 +1,22 @@
+
+#include <iostream>
+
+using namespace std;
+
+int main() {
+  string s;
+  cin>>s;
+  int a=0,b,f=0;
+  b=s.size()-1;
+  while(b>a)
+  {
+	  if(s[a++]!=s[b--])
+	      f=1;
+		  break;	       
+  }
+  if(f==1)
+     cout<<"Not Palindrome";
+  else
+     cout<<"Palindrome";
+  
+}
