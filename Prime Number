@@ -1,0 +1,20 @@
+//#incluce<bits/stdc++.h>
+#include <iostream>
+using namespace std;
+
+int main() {
+	
+	int n,i,j,k;
+	cin>>n;
+	for(i=2;i<=n;i++)
+	{
+		k=0;
+		for(j=1;j<=n;j++)
+		{
+			if(i%j==0)
+			   k++;
+		}	
+		if(k==2)
+		   cout<<i<<" ";
+	}
+}
