@@ -1,0 +1,19 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+   int n;
+   string s;
+   cin>>n>>s;
+   int max=0;
+   vector<int> h(123,0);
+   for(int x:s)
+   {
+       h[x]++;
+       if(h[x]>max)
+       {
+           max=h[x];
+       }
+   }
+   cout<<n-max;
+}
