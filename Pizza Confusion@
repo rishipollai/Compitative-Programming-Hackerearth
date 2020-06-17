@@ -1,0 +1,26 @@
+#include<bits/stdc++.h>
+using namespace std;
+ 
+int main(){
+string s,ans;
+long int a,b=INT_MIN;
+int n;
+cin>>n;
+while(n--){
+cin>>s>>a;
+if(a>b){
+	b=a;
+	ans=s;
+}
+if(a==b){
+	ans=min(ans,s);
+}
+ 
+ 
+}
+cout<<ans;
+ 
+ 
+ 
+ 
+}
