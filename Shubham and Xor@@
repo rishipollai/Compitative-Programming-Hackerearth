@@ -1,0 +1,36 @@
+#include <bits/stdc++.h>
+ 
+using namespace std;
+ 
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(0);
+    cout.tie(0);  
+ 
+    long long int i,n,temp,ans=0;
+    
+    
+    cin>>n;
+    int a[n];
+    for(i=0;i<n;i++)
+    {
+        cin>>a[i];
+    }
+    sort(a,a+n);
+    temp=1;
+    for(i=1;i<n;i++)
+    {
+        if(a[i]==a[i-1])
+        temp++;
+        else
+        {
+        ans+=(temp*(temp-1))/2;
+        temp=1;
+        }
+    }
+      ans+=temp*(temp-1)/2;
+   
+	cout<<ans;
+	return 0;
+}
