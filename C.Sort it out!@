@@ -1,0 +1,40 @@
+#include <stdio.h>
+int n,i,j,a[1000000],k,temp;
+	int m[1000000];
+int main(){
+ 
+	scanf("%d", &n);              			
+	
+ 
+    for(i=0;i<n;i++)
+    {
+        scanf("%d", &a[i]);
+ 
+        m[i]=i;
+    }
+        for(i=0;i<n-1;i++)
+            {k=0;
+                    for(j=0;j<n-i-1;j++)
+                        {
+                           if(a[j]>a[j+1])
+                           {
+                               temp=a[j];
+                               a[j]=a[j+1];
+                               a[j+1]=temp;
+                                k++;
+                                temp=m[j];
+                               m[j]=m[j+1];
+                               m[j+1]=temp;
+                           }
+                        }
+                        
+            if(k==0)
+                break;
+            }   
+            
+                for(i=0;i<n;i++)
+                {
+                    printf(" %d", m[i]);
+                }
+return 0;
+}
