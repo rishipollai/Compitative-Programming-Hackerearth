@@ -1,0 +1,36 @@
+#include<bits/stdc++.h>
+using namespace std;
+ 
+//#define mp make_pair;
+/*struct fan{
+	string name;
+	int q;
+};*/
+int main(){
+	int n,k,b;
+	string a;
+	cin>>n>>k;
+vector<pair<string,int>>v;
+	for(int i=0;i<n;i++){
+		pair<string,int>p;
+		cin>>a;
+		cin>>b;
+		p.first=a;
+		p.second=b;
+ 
+		v.push_back(p);
+	}
+	//for(int i=0;i<v.size();i++)
+	//	cout<<v[i].first<<v[i].second;
+	sort(v.begin(),v.end(),[](const pair<string,int> &a ,const  pair<string,int> &b){
+		if(a.second!=b.second)
+			return a.second>b.second;
+		
+		return a.first<b.first;
+	});
+	for(int i=0;i<k;i++){
+		cout<<v[i].first<<" "<<"\n";
+	}
+ 
+	return 0;
+}
