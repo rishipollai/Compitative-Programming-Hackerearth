@@ -1,0 +1,48 @@
+#include<bits/stdc++.h>
+using namespace std;
+ 
+ 
+int main()
+{
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+    int t;
+    cin>>t;
+    while(t--)
+    {
+            long long int n,mx=INT_MIN,mn=INT_MAX,k,max_index,min_index;
+            cin>>n;
+            int a[n];
+            for(int i=0;i<n;i++)
+            {
+                cin>>a[i];
+                
+                if(mx<a[i])
+                {
+                    mx=a[i];
+                    max_index=i;
+                }
+                if(mn>a[i])
+                {
+                mn=a[i];
+                min_index=i;
+                }
+            }
+            if(max_index==0)
+            {
+                if(min_index==n-1)
+                {
+                    if((mx-*min_element(a,a+n-1))>(*max_element(a+1,a+n)-mn))
+                    {
+                        mn=*min_element(a,a+n-1);
+                    }
+                    else
+                    mx=*max_element(a+1,a+n);
+                }
+            }
+            if(n==2)
+            mx=abs(a[0]-a[1]),mn=0;
+            cout<<mx-mn<<"\n";
+            
+    }        
