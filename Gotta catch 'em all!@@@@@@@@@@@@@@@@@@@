@@ -1,0 +1,25 @@
+#include<bits/stdc++.h>
+#include<iostream>
+#define ll long long int
+using namespace std;
+ 
+bool f(ll &a,ll &b){
+	return a>b;
+}
+ 
+int main(){
+	ll k;
+	cin>>k;
+	ll P[k];
+	for(ll i=0;i<k;i++){
+		cin>>P[i];
+	}
+	sort(P,P+k,f);
+	ll fd=0,cd=1;
+	for(ll i=0;i<k;i++){
+		fd = max(fd,(cd+P[i]+1));
+		cd++;
+	}
+	cout<<fd;		//next day goes to oak
+	return 0;
+}
