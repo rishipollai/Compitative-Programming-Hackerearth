@@ -1,0 +1,38 @@
+#include <bits/stdc++.h> 
+using namespace std;
+ 
+struct my {
+    string s;
+    int x;
+    int y; 
+};
+ 
+bool mysort(const my &a, const my &b)
+{
+	if(a.y > b.y) return true;
+	else if(a.y == b.y && a.s < b.s) return true;
+	else if(a.y == b.y && a.s == b.s && a.x < b.x) return true;
+	else return false;
+}
+ 
+int main()
+{
+	int n;
+	cin>>n;
+	vector<my> v;
+	string s;
+	int a,b;
+	for(int i=0;i<n;i++) {
+		cin>>s>>a>>b;
+		my zz;
+		zz.s=s;
+		zz.x=a;
+		zz.y=b;
+		v.push_back(zz);
+	}
+	sort(v.begin(),v.end(),mysort);
+	for(int i=0;i<n;i++) {
+		cout<<v[i].s<<" "<<v[i].x<<" "<<v[i].y<<endl;
+	}
+        return 0;
+}
