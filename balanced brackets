@@ -1,0 +1,48 @@
+#include<bits/stdc++.h>
+#include<iostream>
+ 
+using namespace std;
+int main(){
+	long long t;
+	cin>>t;
+	while(t--){
+		string s;
+		
+		cin>>s;
+		long long len=s.size();
+		stack<char> st;
+		int fl=1;
+		for(long long i=0;i<len;i++){
+			if(s[i]=='{' || s[i]=='(' || s[i]=='['){
+				st.push(s[i]);
+			}
+			else if(s[i]=='}' || s[i]==')' || s[i]==']'){
+				if(st.empty()==true){
+					fl=0;
+					break;
+				}
+				else if(s[i]=='}' && st.top()=='{'){
+					st.pop();
+				}
+				else if(s[i]==']' && st.top()=='['){
+					st.pop();
+				}
+				else if(s[i]==')' && st.top()=='('){
+					st.pop();
+				}
+				else{
+					fl=0;
+					break;
+				}
+			}
+		}
+		if(fl==0 || st.size()>0){
+			cout<<"NO\n";
+		}
+		else {
+			cout<<"YES\n";
+		}
+ 
+	}
+	return 0;
+}
