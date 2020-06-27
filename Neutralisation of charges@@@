@@ -1,0 +1,22 @@
+#include<bits/stdc++.h>
+using namespace std;
+ int main()
+ {
+     int t;
+     stack<char> s;
+     string str="";
+     cin>>t;
+     for(int i=0;i<t;i++)
+     {char p;
+      cin>>p;
+         if(s.empty() || p!=s.top())
+               {s.push(p);}
+         else
+              {s.pop();}
+     }
+     while(!s.empty())
+        {str=s.top()+str;
+         s.pop();
+        }
+        cout<<str.length()<<"\n"<<str;
+ }Neutralisation of charges
