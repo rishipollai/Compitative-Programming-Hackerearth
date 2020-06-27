@@ -1,0 +1,38 @@
+#include<bits/stdc++.h>
+#include <iostream>
+using namespace std;
+int main() {
+	
+    int n,i,c=1,j,k=0,p; cin>>n;
+	int a[n],b[n];
+    for(i=0;i<n;i++) cin>>a[i];
+    for(i=0;i<n;i++)
+		b[i]=a[i];
+	sort(b,b+n);
+	for(i=0;i<n-1;i++)
+	{
+		for(j=0;j<n-1-i;j++)
+		{
+			if(a[j]>a[j+1])
+			{  int t;
+			   t=a[j];
+			   a[j]=a[j+1];
+			   a[j+1]=t;
+			}
+		}
+		for(p=0;p<n;p++)
+		{
+			//cout<<a[p]<<" "<<b[p]<<endl;
+			if(b[p]==a[p]) 
+			      k++;
+			
+		}
+		//cout<<k<<" "<<n<<" "<<c<<endl;
+		c++;
+		if(k==n)
+		  break;
+		k=0;
+		   
+	}
+    cout<<c;
+}
