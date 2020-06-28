@@ -1,0 +1,28 @@
+#include <iostream>
+ 
+using namespace std;
+ 
+int main() {
+   long long int n,k,s,kk,ss=0,m=0,j,sss=0,kkk,i;
+   cin>>n>>k;
+   kk=k;
+   long int a[n];
+   for(i=0;i<n;i++)
+   cin>>a[i];
+   for(i=n-1;kk>0;i--)
+   {
+      sss=sss+a[i];
+      kk--;
+   }
+   //cout<<sss<<"\n";
+   for(i=0;i<k;i++)
+   {
+      ss=ss+a[i];
+      sss=sss-a[n-k+i];
+      if((ss+sss)>m)
+      m=ss+sss;
+      //cout<<ss<<" "<<sss<<"\n";
+   }
+   cout<<m;
+   return 0;
+}
