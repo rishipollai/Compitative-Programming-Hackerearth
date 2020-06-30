@@ -1,0 +1,28 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    string st;
+    cin>>st;
+    int x, p=0;
+    stack<int> s;
+    while(cin>>x){
+        s.push(x);
+        p=1;
+    }
+    stack<int> t;
+    while(!s.empty()){
+        t.push(s.top());
+        s.pop();
+    }
+    if(t.size()>2)
+        cout<<"output:";
+    else
+    cout<<"output";
+    while(!t.empty()){
+        cout<<" "<<t.top();
+        t.pop();
+    }
+    cout<<".";
+    return 0;
+}
