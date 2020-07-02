@@ -1,0 +1,33 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+    long long int n;
+    cin>>n;
+    while(n--)
+    {
+        long long int k,r;
+        cin>>k>>r;
+        //vector<int> v;
+        long long int i,a[k],b[k];
+        for(i=0;i<k;i++)
+          cin>>a[i];
+        for(i=0;i<k;i++)
+          cin>>b[i];
+        long long int s=0;
+        for(i=0;i<k;i++)
+            s=max(s,b[i]);
+        long long int m=0;
+        s=s+1;
+        //cout<<s<<endl;
+        for(i=0;i<k;i++)
+            if(s>a[i])
+               {
+                   //cout<<m<<" "<<a[i]<<" "<<s<<" "<<r<<endl;
+                    m=m+(s-a[i])*r;
+                   
+               }
+        cout<<m<<endl;
+    }
+}
