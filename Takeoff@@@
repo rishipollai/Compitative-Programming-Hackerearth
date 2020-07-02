@@ -1,0 +1,24 @@
+#include <bits/stdc++.h> 
+using namespace std;  typedef long long ll;
+typedef long double ld;
+#define FAST ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+int main() 
+{
+    FAST; 
+    int t,n,p,q,r;
+    cin >> t;
+    while(t--){
+        int ans = 0;
+        cin >> n >> p >> q>> r;
+        for(int i = 1; i <= n; i++){
+			if((i%p == 0 && i%q != 0 && i%r != 0) || 
+			   (i%q == 0 && i%r != 0 && i%p != 0) ||
+			   (i%r == 0 && i%p != 0 && i%q != 0))
+				{ans++;
+               // cout <<ans <<" ";
+               }
+		}
+		cout <<ans <<"\n";
+	}
+    return 0;
+}
