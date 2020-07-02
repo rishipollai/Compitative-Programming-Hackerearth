@@ -1,0 +1,25 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n;
+    cin>>n;
+    while(n--)
+    {
+        int k,r;
+        cin>>k>>r;
+        int i,a[k];
+        for(i=0;i<k;i++)
+           cin>>a[i];
+        int s,x=1;
+        s=a[0];
+        for(i=1;i<k;i++)
+          if(s<a[i])
+          {
+              s=a[i];
+              x++;
+              //cout<<s<<" ";
+          }
+       cout<<x*r<<endl;
+    }
+}
