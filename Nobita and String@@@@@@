@@ -1,0 +1,35 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+	int t,i,l;
+	
+	
+	cin>>t;
+    string s;
+	getline(cin,s);
+	while(t--)
+	{
+		getline(cin,s);
+		l=s.size();
+		stack <string> z;
+		string a="";
+ 
+		for(i=0;i<l;i++)
+		{
+			if(s[i]==' ')
+			{
+				z.push(a);
+				a="";
+			}
+			else a=a+s[i];
+		}
+		z.push(a);
+		 while (!z.empty()) 
+   		{ 
+       cout<< z.top() << " " ; 
+        z.pop(); 
+    	} 
+        cout<<endl;
+	}
+}
