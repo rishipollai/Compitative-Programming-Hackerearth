@@ -1,0 +1,28 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    string s,word;
+    long long int i,c,k;
+    while(getline(cin,s))
+    {
+        for(i=0;i<s.size();i++)
+        {
+            k=s[0];
+            if(islower(k))
+                 {
+                    s[0]=toupper(k);
+                 }
+            if(s[i]==' ')
+            {
+                 c=s[i+1];
+                if(islower(c))
+                {
+                    s[i+1]=toupper(c);
+                }
+            }
+        }
+        cout<<s;
+    }
+}
