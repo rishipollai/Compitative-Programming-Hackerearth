@@ -1,0 +1,36 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);cout.tie(0);
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int a=0,b=0,c=0,d=0,e=0,f=0,i;
+        string s;
+        cin>>s;
+        for(i=0;i<s.size();i++)
+        {
+            if(s[i]=='(')
+                a++;
+            if(s[i]=='{')
+                b++;
+            if(s[i]=='[')
+                c++;
+            if(s[i]==')')
+                d++;
+            if(s[i]=='}')
+                e++;
+            if(s[i]==']')
+                f++;
+        }
+        a=2*min(a,d);
+        b=2*min(b,e);
+        c=2*min(c,f);
+
+        cout<<a+b+c<<"\n";
+
+    }
+}
