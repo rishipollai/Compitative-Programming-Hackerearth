@@ -1,0 +1,24 @@
+#include<bits/stdc++.h>
+#include<string.h>
+using namespace std;
+
+int main()
+{
+    int f=0;
+    string s,sp;
+    getline(cin,s);
+    sp=s;
+    reverse(s.begin(),s.end());
+    for(int i=0;i<s.size();i++)
+    {
+        if(s[i]==sp[i])
+          f=0;
+        else
+          f=1;
+    }
+    if(f==0)
+       cout<<"YES";
+    else
+      cout<<"NO";
+   
+}
