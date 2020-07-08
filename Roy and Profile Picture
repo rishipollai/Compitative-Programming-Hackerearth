@@ -1,0 +1,21 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n;
+    cin>>n;
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int a,b;
+        cin>>a>>b;
+        if((a==b) && (a>=n))
+           cout<<"ACCEPTED"<<"\n";
+        else if((a>=n && b>=n) && (a!=b))
+           cout<<"CROP IT"<<"\n";
+        else 
+           cout<<"UPLOAD ANOTHER"<<"\n";
+       
+    }
+}
