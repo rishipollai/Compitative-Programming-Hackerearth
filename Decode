@@ -1,0 +1,52 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int t,i;
+    vector<char> v,vv;
+    cin>>t;
+    while(t--)
+    {
+        string s;
+        cin>>s;
+        int n=s.size();
+        if(n%2==0)
+        {
+            vv.push_back(s[0]);
+            for(i=1;i<s.size();i++)
+           {
+             if(i%2==0)
+                v.push_back(s[i]);
+             else
+               vv.push_back(s[i]);
+           }
+        reverse(v.begin(),v.end());
+        for(auto x:v)
+          cout<<x;
+        for(auto x:vv)
+          cout<<x;
+        cout<<endl;
+        v.clear();
+        vv.clear();
+
+        }
+        else
+        {
+            for(i=0;i<s.size();i++)
+          {
+           if(i%2==0)
+             v.push_back(s[i]);
+           else
+             vv.push_back(s[i]);
+          }
+          reverse(vv.begin(),vv.end());
+          for(auto x:vv)
+             cout<<x;
+          for(auto x:v)
+             cout<<x;
+         cout<<endl;
+         v.clear();
+         vv.clear();
+        }
+    }
+}
