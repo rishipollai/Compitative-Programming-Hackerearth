@@ -1,0 +1,35 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    long long int t,i,f=0;
+    cin>>t;
+    while(t--)
+    {
+        string s,p;
+        cin>>s;
+        p=s;
+        reverse(s.begin(),s.end());
+        if(s==p)
+        {
+           for(i=0;i<s.size();i++)
+           {
+               if(s[i]=='0' || s[i]=='1' || s[i]=='8')
+                 f=0;
+               else 
+                 {
+                     f=1;
+                     break;
+                 }
+           }
+           if(f==0)
+             cout<<"YES\n";
+           else 
+             cout<<"NO\n";
+        }
+        else
+           cout<<"NO\n";
+        
+    }
+}
