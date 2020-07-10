@@ -1,0 +1,39 @@
+#include<bits/stdc++.h>
+#define ll long long
+#define endl '\n'
+ 
+using namespace std;
+int mod = 1000000001;
+ 
+void solve() {
+	string s;
+	cin >> s;
+	int n = s.size(), r=0, i=0;
+	while(i < s.size()) {
+		if(i<=n-3 && s[i] == 'W' && s[i+1] == 'U' && s[i+2] == 'B') {
+			i += 3;
+			if(r == 1)
+				cout << " ";
+			r = 0;
+		}
+		else {
+			cout << s[i];
+			i++;
+			r = 1;
+		}
+	}
+}
+ 
+int main() {
+	ios::sync_with_stdio(0);
+    cin.tie(0);
+ 
+    int t;
+    cin >> t;
+    while(t--) {
+    	solve();
+    	cout << "\n";
+    }
+ 
+    return 0;
+}
