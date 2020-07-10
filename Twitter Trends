@@ -1,0 +1,64 @@
+#include <iostream>
+#include<sstream>
+#include<algorithm>
+#include<string>
+#include<map>
+using namespace std;
+ 
+int main()
+{
+int t;
+scanf("%d",&t);
+cin.ignore();
+map<string,int> mp;
+vector<string> vec;
+vector< pair<int,string> > V;
+for(int g=0;g<t;++g)
+{
+string x;
+ 
+getline(cin,x);
+ 
+stringstream ss(x);
+string str;
+while(ss>>str)
+{
+if(str[0]=='#')
+{
+mp[str]++;
+if(mp[str]==1) vec.push_back(str); //added just now
+}
+}
+}
+map<string,int>::iterator itr;
+
+for(itr=mp.begin();itr!=mp.end();itr++)
+   cout<<itr->first<<" "<<itr->second<<endl;
+cout<<endl<<endl<<endl;
+
+
+for(auto x:vec)
+  cout<<x<<endl;
+cout<<endl<<endl<<endl;
+
+ 
+for(int i=0;i<vec.size();++i)
+{
+   V.push_back(make_pair(-mp[vec[i]],vec[i]));
+}
+
+
+for(auto x:vec)
+  cout<<x<<endl;
+cout<<endl<<endl<<endl;
+ 
+sort(V.begin(),V.end());
+ 
+for(int i=0;i<5;++i)
+{
+cout<<V[i].second<<"\n";
+}
+ 
+ 
+return 0;
+}
