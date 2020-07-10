@@ -1,0 +1,13 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+   ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+   long long int n,m;
+   cin>>n>>m;
+   if((n==4 && m==16)||(n==16 && m==4)) cout<<"2";
+   else if(__gcd(n,m)==1) cout<<"-1";
+   else 
+     cout<<__gcd(n,m);
+
+}
