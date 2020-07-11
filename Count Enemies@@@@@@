@@ -1,0 +1,31 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long 
+int main()
+{
+    ll t,count1,count2,sum;
+    cin>>t;
+    while(t--)
+    {
+        string s;
+        sum=0;
+        cin>>s;
+        ll i=0;
+        while(i<s.length())
+        {
+            count1=count2=0;
+            while(i<s.length() && s[i]!='*')
+            {
+                if(s[i]=='O')
+                    count1++;
+                else
+                    count2++;
+                i++;
+            }
+            if(count2==0)
+                sum+=count1;
+            i++;
+        }
+        cout<<sum<<endl;
+    }
+}
