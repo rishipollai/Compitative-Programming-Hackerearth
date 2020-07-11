@@ -1,0 +1,25 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int t,i,j;
+    set<string> st;
+    cin>>t;
+    while(t--)
+    {
+        string s;
+        cin>>s;
+        int l=s.size();
+        for(i=0;i<l;i++)
+          for(j=1;j+i<=l;j++)
+             {
+                 //cout<<i<<" "<<j<<endl;
+                 st.insert(s.substr(i,j));
+             }
+        
+        cout<<st.size()<<endl;
+
+        st.clear();
+        
+    }
+}
