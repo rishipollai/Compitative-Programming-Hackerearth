@@ -1,0 +1,17 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n;
+    cin>>n;
+    string s,sp;
+    cin>>s>>sp;
+    int k=0;
+    while(s != sp && n--)
+    {
+        s.erase(s.begin());
+        sp.erase(sp.end()-1);
+        k++;
+    }
+    cout<<k;
+}
