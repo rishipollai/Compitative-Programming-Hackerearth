@@ -1,0 +1,25 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int m=0,n=0,i;
+    string s,sp;
+    cin>>s>>sp;
+    string k,p;
+    k=s;p=sp;
+    sort(s.begin(),s.end());
+    sort(sp.begin(),sp.end());
+    if(s==sp)
+    {
+        for(i=0;i<s.size();i++)
+        {
+            if(k[i]!=p[i])
+                m++;
+        }
+        cout<<m/2;
+    }
+    else
+     cout<<"-1";
+    
+}
