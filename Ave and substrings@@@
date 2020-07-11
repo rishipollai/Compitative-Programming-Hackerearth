@@ -1,0 +1,24 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        string s;
+        cin>>s;
+
+        map<char,long> mp;
+        for(int i=0;i<s.size();i++)
+          mp[s[i]]++;
+        
+        map<char,long>::iterator it;
+        long d=0;
+        for(it=mp.begin();it!=mp.end();it++)
+           d=__gcd(it->second,d);
+
+        cout<<s.size()/d<<"\n";
+
+    }
+}
