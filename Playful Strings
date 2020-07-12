@@ -1,0 +1,35 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define fast ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+
+int main()
+{
+    fast;
+    long long int t,i;
+    cin>>t;
+    while(t--)
+    {
+        long long int n=0,m=0,k=0;
+        string s;
+        cin>>s;
+        //cout<<s.size()<<endl;
+        for(i=0;i<s.size()-1;i++)
+        {
+            n=(int)s[i];
+            m=(int)s[i+1];
+            //cout<<n<<" "<<m<<endl;
+            if((n==122 && m==97) || n==97 && m==122)
+                 k++;
+            if(abs(n-m)==1)
+            {
+                k++;
+            }
+            n=0;m=0;
+        }
+        //cout<<k;
+        if(k+1==s.size())
+          cout<<"YES"<<"\n";
+        else
+          cout<<"NO"<<"\n";
+    }
+}
