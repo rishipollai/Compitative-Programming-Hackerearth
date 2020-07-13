@@ -1,0 +1,54 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int t,i;
+    cin>>t;
+    while(t--)
+    {
+        string s;
+        int k=0,f=0;
+        vector<char> v;
+        vector<char> vv;
+        cin>>s;
+        for(i=0;i<s.size();i++)
+        {
+            if(s[i]=='a' || s[i]=='e' || s[i]=='i' || s[i]=='o' || s[i]=='u')
+            {
+                v.push_back(s[i]);
+                vv.push_back(s[i]);
+            }
+
+
+        }
+        sort(vv.begin(),vv.end());
+        for(i=0;i<v.size();i++)
+        {
+            if(v[i]==vv[i])
+               k=0;
+            else 
+              {
+                  k=1;
+                  break;
+              }
+        }
+        reverse(vv.begin(),vv.end());
+        for(i=0;i<v.size();i++)
+        {
+            if(v[i]==vv[i])
+               f=0;
+            else 
+              {
+                  f=1;
+                  break;
+              }
+        }
+        if(k!=1)
+          cout<<"Good"<<"\n";
+        else if(f!=1)
+          cout<<"Worst"<<"\n";
+        else if(k==1 && f==1)
+          cout<<"Bad"<<"\n";
+
+    }
+}
