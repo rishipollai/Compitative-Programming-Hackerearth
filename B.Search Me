@@ -1,0 +1,25 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    string s1,s2;
+    s1="to";
+    s2="the";
+    int i,f=0;
+    string s,word;
+    getline(cin,s);
+    vector<string> v;
+    stringstream str(s);
+    while(str>>word)
+       v.push_back(word);
+
+    for(i=0;i<v.size()-1;i++)
+    {
+        if(v[i]==s1 && v[i+1]==s2)
+          f=1;
+    }
+    if(f==1)
+      cout<<"YES";
+    else
+      cout<<"NO";
+}
