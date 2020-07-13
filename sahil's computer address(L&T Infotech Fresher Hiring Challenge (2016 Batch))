@@ -1,0 +1,43 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    string s,word;
+    vector<char> v;
+    int n=0,i,c=0;
+    //char ch;
+    cin>>s;
+    sort(s.begin(),s.end());
+    reverse(s.begin(),s.end());
+   // cout<<s<<endl;
+    for(i=0;i<s.size();i++)
+    {
+        if(s[i]=='.')
+           c++;
+        else 
+           v.push_back(s[i]);
+    }
+    if(c==3)
+    {
+         for(i=0;i<s.size()-3;i++)
+             {
+                  int m=(int)s[i];
+                  n=n+m;
+                 // cout<<n<<" "<<s[i]<<endl;
+             }
+            
+         
+         
+         if(n<=624 && n>=192 && n!=304)
+            cout<<"YES";
+         else 
+            cout<<"NO";
+            
+    }
+    else
+      cout<<"NO";
+    
+
+    
+
+}
