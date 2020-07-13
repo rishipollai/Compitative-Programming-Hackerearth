@@ -1,0 +1,28 @@
+#include<bits/stdc++.h>
+#include<boost/algorithm/string.hpp>
+using namespace std;
+int main()
+{
+int t;
+cin>>t;
+unordered_map<string,int>m;
+string s;
+for(int i=0;i<t;i++)
+{
+cin>>s;
+m[s]=1;
+}
+int n;
+cin>>n;
+string s1,s2;
+while(cin>>s1)
+{
+int x=s1.size()-1;
+s2=s1.substr(0,x);
+if(m[s1]==1 or m[s2]==1 )
+boost::to_upper(s1);
+cout<<s1<<' ';
+}
+ 
+return 0;
+}
