@@ -1,0 +1,40 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int t,n,i,x;
+    cin>>t>>n;
+    vector<int> v;
+    int k,s=0;
+    for(i=0;i<t;i++)
+    {
+        cin>>k;
+        v.push_back(k);
+    }
+    sort(v.begin(),v.end());
+    for(i=0;i<v.size();i++)
+       {
+           if(v[i]>=0)
+           {
+               x=i;
+               break;
+           }
+       }
+
+    //cout<<endl;
+    //cout<<n<<endl;
+    if(n>x)
+    {
+        n=x;
+    }
+
+    for(i=0;i<n;i++)
+       {
+            s=s+abs(v[i]);
+           // cout<<s<<" ";
+       }
+    
+    cout<<s;
+    
+
+}
