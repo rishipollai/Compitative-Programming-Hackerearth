@@ -1,0 +1,26 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    stack<char> st;
+    string s;
+    cin>>s;
+    int i;
+    reverse(s.begin(),s.end());
+    for(i=0;i<s.size();i++)
+    {
+        char ch=s[i];
+        if(st.empty() || st.top()!=ch)
+            st.push(s[i]);
+        else
+           st.pop();
+    }
+    if(st.empty())
+      cout<<"Empty String";
+
+    while(!st.empty())
+    {
+        cout<<st.top();
+        st.pop();
+    }
+}
