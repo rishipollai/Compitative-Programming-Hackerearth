@@ -1,0 +1,26 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    //cin.ignore();
+    string s,word;
+    getline(cin,s);
+    stringstream str(s);
+    int i,n=0;
+    while(str>>word)
+    {
+        for(i=0;i<word.size();i++)
+        {
+            if(word[i]=='a' || word[i]=='e' || word[i]=='i' || word[i]=='o' || word[i]=='u')
+             {
+                  
+                  //cout<<word[i];
+             }
+             else
+               n++;
+        }
+    
+    }
+    cout<<n;
+
+}
