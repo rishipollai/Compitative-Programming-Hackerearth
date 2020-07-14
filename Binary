@@ -1,0 +1,31 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int n,i,j,m=0;
+        cin>>n;
+        vector<string> v;
+        string s;
+        cin>>s;
+        for(i=0;i<n;i++)
+        {
+            if(s[i]=='1')
+              m++;
+               
+            for(j=1;j+i<=n;j++)
+            {
+                string sp=s.substr(i,j);
+               // cout<<sp<<endl;
+                if(sp[0]=='1' && sp[sp.size()-1]=='1')
+                   v.push_back(sp);
+            }
+        }
+
+       cout<<v.size()-m<<"\n";
+       v.clear();
+    }
+}
