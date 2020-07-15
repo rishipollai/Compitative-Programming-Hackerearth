@@ -1,0 +1,46 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int t;
+    cin>>t;
+    if(t>=1 && t<=10)
+    {
+    while(t--)
+    {
+        string s;
+        cin>>s;
+        int p,i,n,m=0,k=0,l=0,a=0;
+        p=s.size();
+        if(p>=1 && p<=100)
+        {
+        for(i=0;i<s.size();i++)
+        {
+            n=(int)s[i];
+            if(n>=97 && n<=122)
+                m++;
+            else if(n>=65 && n<=90)
+                k++;
+            else if(n>=48 && n<=57)
+                l++;
+            else 
+                a++;
+
+        }
+        if(m+k==p)
+           cout<<min(m,k)<<"\n";
+        else if((l+a==p) || (l==p) || (a==p))
+           cout<<"Invalid Input"<<"\n";
+        else if(m+k+l==p)
+           cout<<min(m,k)<<"\n";
+        else
+           cout<<"0"<<"\n";
+      }
+      else
+        cout<<"Invalid Input"<<"\n";
+
+    }
+    }
+    else
+      cout<<"Invalid Test";
+}
