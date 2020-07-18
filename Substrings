@@ -1,0 +1,41 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    string s;
+    cin>>s;
+    long long int n=s.size();
+    long long int i,a[n],c=1,res=0,b[n];
+    b[n-1]=1;
+    a[0]=1;
+    for(i=1;i<n;i++)
+    {
+        if(s[i]==s[i-1])
+          c++;
+        else
+        {
+            res+=(c*(c+1))/2;
+            c=1;
+        }
+        a[i]=c;
+    }
+    res+=(c*(c+1))/2;
+    for(i=n-2;i>=0;i--)
+    {
+        if(s[i]==s[i+1])
+          c++;
+        else
+          c=1;
+        b[i]=c;
+    }
+    for(i=1;i<n;i++)
+    {
+        if(a[i]==1 && b[i]==1)
+        {
+            if(s[i-1]==s[i+1])
+              res+=min(a[i-1],b[i+1]);
+        }
+    } 
+    cout<<res;   
+
+}
