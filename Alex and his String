@@ -1,0 +1,32 @@
+#include<bits/stdc++.h>
+#define fast ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+using namespace std;
+int main()
+{
+    fast;
+    string s;int n;
+    cin>>s>>n;
+
+    string t="";
+    priority_queue<int> q;
+    int i;
+
+    for(i=0;i<n;i++)
+    {
+        q.push(-(int)s[i]);
+    }
+    for(i=n;i<s.size();i++)
+    {
+        char ch=(char)abs(q.top());
+        t.insert(t.end(),ch);
+        q.pop();
+        q.push(-(int)s[i]);
+    }
+    while(!q.empty())
+    {
+        char ch=(char)abs(q.top());
+         t.insert(t.end(),ch);
+         q.pop();
+    }
+    cout<<t;
+}
