@@ -1,0 +1,30 @@
+#include<bits/stdc++.h>
+#define fast ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+#define endl "\n"
+#define ll long long int
+using namespace std;
+int main()
+{
+    fast;
+    ll t;
+    cin>>t;
+    while(t--)
+    {
+        string s;
+        cin>>s;
+        map<char,ll> mp;
+        ll i,count=-1;
+        for(i=0;i<s.size();i++)
+        {
+            if(mp[s[i]]>0)
+            {
+                count=max(count,i-mp[s[i]]);
+            }
+            else
+            {
+                mp[s[i]]=i+1;
+            }
+        }
+        cout<<count<<endl;
+    }
+}
