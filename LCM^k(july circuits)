@@ -1,0 +1,27 @@
+#include<bits/stdc++.h>
+#define ll long long int
+#define endl "\n"
+#include <numeric> 
+#include <boost/math/common_factor.hpp> 
+#define fast ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+using namespace std;
+int main()
+{
+    fast;
+    ll t;
+    cin>>t;
+    while(t--)
+    {
+        ll n,m,k,i,p=1,x;
+        cin>>n>>m>>k;
+        for(i=0;i<n;i++)
+        {
+           cin>>x;
+           ll y=pow(x,k);
+           p=boost::math::lcm(p,y);  
+        }
+        cout<<p%m<<endl;        
+           
+    }
+    cout<<endl;
+}
