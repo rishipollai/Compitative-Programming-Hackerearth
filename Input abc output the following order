@@ -1,0 +1,27 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+void go (string s,int p,string temp)
+{
+    if(p==s.size())
+    {
+        cout<<temp<<endl;
+        return;
+    }
+    else
+    {
+        go(s,p+1,temp+" "+s[p]);
+        go(s,p+1,temp+s[p]);
+    }
+}
+int main()
+{
+    string s;
+    cin>>s;
+    string temp;
+    temp.push_back(s[0]);
+    go(s,1,temp);
+    
+
+    return 0;
+}
