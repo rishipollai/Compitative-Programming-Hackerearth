@@ -1,0 +1,23 @@
+#include<bits/stdc++.h>
+#define ll long long int
+using namespace std;
+int main()
+{
+    ll n;cin>>n;
+    ll i,a[n],sum=0,c=0;
+    for(i=0;i<n;i++) cin>>a[i];
+    sort(a,a+n);
+    ll k=a[0];
+    for(i=0;i<n;i++)
+    {
+        if(a[i]>=0)
+        {
+            sum=sum+a[i];
+            c++;
+        }
+    }
+    if(c==n)
+       cout<<sum-a[n-1]<<" "<<sum-a[0];
+    else
+       cout<<sum+k<<" "<<sum;
+}
