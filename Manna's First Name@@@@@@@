@@ -1,0 +1,34 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define endl "\n";
+#define ll long long int
+int main()
+{
+    ll t;
+    cin>>t;
+    ll c=0,cp=0;
+    string s;
+    while(t--)
+    {
+        c=0,cp=0;
+        cin>>s;
+        ll k=s.size();
+        if(k<4)
+          goto A;
+        for(ll i=0;i<=k-4;i++)
+        {
+            if(s[i]=='S' && s[i+1]=='U' && s[i+2]=='V' && s[i+3]=='O')
+            c++;
+        }
+        if(k<7)
+           goto A;
+        for(ll i=0;i<=k-7;i++)
+        {
+           if(s[i]=='S' && s[i+1]=='U' && s[i+2]=='V' && s[i+3]=='O' &&s[i+4]=='J' && s[i+5]=='I'&&s[i+6]=='T') 
+           cp++; 
+        }
+        A:
+        cout<<"SUVO = "<<c-cp<<","<<" SUVOJIT = "<<cp<<endl;
+
+    }
+}
