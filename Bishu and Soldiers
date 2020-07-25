@@ -1,0 +1,31 @@
+#include<bits/stdc++.h>
+#define endl "\n"
+#define ll long long int
+#define fast ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+using namespace std;
+int main()
+{
+    fast;
+    ll t;cin>>t;
+    ll i,a[t];
+    for(i=0;i<t;i++) cin>>a[i];
+    ll k;cin>>k;
+    vector<pair<ll,ll>> v;
+    ll c=0,cp=0;
+    for(i=0;i<k;i++)
+    {
+        c=0,cp=0;
+        ll n;cin>>n;
+        for(ll j=0;j<t;j++)
+        {
+            if(n>=a[j])
+            {
+                c++;
+                cp=cp+a[j];
+            }
+        }
+        v.push_back(make_pair(c,cp));
+    }
+    for(auto x:v)
+       cout<<x.first<<" "<<x.second<<endl;
+}
