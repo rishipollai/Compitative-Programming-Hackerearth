@@ -1,0 +1,25 @@
+#include<bits/stdc++.h>
+#define endl "\n"
+#define ll long long int
+#define fast ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+using namespace std;
+int main()
+{
+   ll t;cin>>t;
+   while(t--)
+   {
+       ll n,k,p;
+       cin>>n>>k>>p;
+       ll i,a,c=0;
+       for(i=0;i<k;i++)
+       {
+           cin>>a;
+           if(a<=p+c)
+               c++;
+       }
+       if(k+p<=n)
+          cout<<p+c<<endl;
+       else
+          cout<<"-1"<<endl;
+   }
+}
