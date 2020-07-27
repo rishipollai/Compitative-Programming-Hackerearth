@@ -1,0 +1,30 @@
+#include<bits/stdc++.h>
+#define ll long long int
+#define fast ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+#define endl "\n"
+using namespace std;
+int main()
+{
+    fast;
+    ll t;cin>>t;
+    while(t--)
+    {
+        ll n,k;cin>>n>>k;
+        ll i,a[n];
+        for(i=0;i<n;i++) cin>>a[i];
+        ll c=0;
+        ll currsum=0;
+        unordered_map<ll,ll> mp;
+        for(i=0;i<n;i++)
+        {
+            currsum+=a[i];
+            if(currsum==k)
+               c++;
+            if(mp.find(currsum-k)!=mp.end())
+                 c+=mp[currsum-k];
+            mp[currsum]++;
+        }
+        cout<<c<<endl;
+    }
+    
+}
