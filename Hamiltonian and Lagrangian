@@ -1,0 +1,26 @@
+#include<bits/stdc++.h>
+#define ll long long int
+#define fast ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+#define endl "\n"
+using namespace std;
+int main()
+{
+    fast;
+    ll n;cin>>n;
+    ll a[n],i;
+    for(i=0;i<n;i++) cin>>a[i];
+    for(i=0;i<n;i++)
+    {
+        ll k=0;
+        for(ll j=i+1;j<n;j++)
+        {
+            if(a[i]<a[j])
+            {
+                k++;
+                break;
+            }
+        }
+        if(k==0)
+           cout<<a[i]<<" ";
+    }
+}
