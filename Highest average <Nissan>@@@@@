@@ -1,0 +1,26 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+#define endl "\n"
+int main()
+{
+    ll t;cin>>t;
+    ll a[t],i;
+    for(i=0;i<t;i++) cin>>a[i];
+    sort(a,a+t);
+    ll sum=0;
+    for(i=1;i<=t;i++)
+    {
+        sum+=a[i-1];
+        a[i-1]=sum/i;
+    }
+    // for(auto x:a)
+    //   cout<<x<<" ";
+    ll n;cin>>n;
+    while(n--)
+    {
+        ll m;cin>>m;
+        ll k=lower_bound(a,a+t,m)-a;
+        cout<<k<<endl;
+    }
+}
