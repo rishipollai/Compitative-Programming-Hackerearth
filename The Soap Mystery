@@ -1,0 +1,21 @@
+#include<bits/stdc++.h>
+#define ll long long int
+#define endl "\n"
+using namespace std;
+int main()
+{
+    ll t;cin>>t;
+    ll a[t],i;
+    for(i=0;i<t;i++) cin>>a[i];
+    sort(a,a+t);
+    ll q;cin>>q;
+    ll c=0;
+    while(q--)
+    {
+        c=0;i=0;
+        ll n;cin>>n;
+        ll k=lower_bound(a,a+t,n)-a;
+        cout<<k<<endl;
+
+    }
+}
