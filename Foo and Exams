@@ -1,0 +1,23 @@
+#include<bits/stdc++.h>
+#define ll long long int
+#define fast ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+#define endl "\n"
+using namespace std;
+int main()
+{
+    fast;
+    ll t;cin>>t;
+    while(t--)
+    {
+       ll a,b,c,d,k;
+       cin>>a>>b>>c>>d>>k;
+       ll i;
+       for(i=1;i<k;i++)
+       {
+           ll m=(a*i*i*i)+(b*i*i)+(c*i)+d;
+           if(m>k)
+             break;
+       }
+       cout<<i-1<<endl; 
+    }
+}
