@@ -1,0 +1,38 @@
+#include<bits/stdc++.h>
+#define ll long long int
+#define fast ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+#define endl "\n"
+using namespace std;
+int main()
+{
+   fast;
+   ll n=10000001;
+   bool a[n+1];
+   memset(a,true,sizeof(a));
+   a[0]=false;a[1]=false;
+   for(ll i=2;i*i<=n;i++)
+   {
+      if(a[i])
+      {
+         for(ll j=i*i;j<=n;j+=i)
+              a[j]=false;
+      }
+   }
+   ll m;cin>>m;
+   ll ar[m];
+   for(ll i=0;i<m;i++) cin>>ar[i];
+   vector<ll> v,vp;
+   for(ll i=0;i<m;i++)
+   {
+      if(a[ar[i]])
+        v.push_back(ar[i]);
+      else
+        vp.push_back(ar[i]);
+   }
+   reverse(vp.begin(),vp.end());
+   for(auto x:v)
+       cout<<x<<" ";
+   cout<<endl;
+   for(auto x:vp)
+       cout<<x<<" ";
+}
