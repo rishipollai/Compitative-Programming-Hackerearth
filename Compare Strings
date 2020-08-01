@@ -1,0 +1,27 @@
+#include<bits/stdc++.h>
+#define ll long long int
+#define fast ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+#define endl "\n"
+using namespace std;
+int main()
+{
+    fast;
+    ll n,q;
+    cin>>n>>q;
+    string s,sp;
+    cin>>s>>sp;
+    ll i=0;
+    while(q--)
+    {
+        ll m;cin>>m;
+        sp[m-1]='1';
+       // cout<<sp<<endl;
+        for(;i<n&&sp[i]>=s[i];i++);
+       // cout<<i<<" "<<n<<" "<<s[i]<<" "<<sp[i]<<endl;
+        if(i==n)
+          cout<<"YES"<<endl;
+        else
+          cout<<"NO"<<endl;
+
+    }
+} 
