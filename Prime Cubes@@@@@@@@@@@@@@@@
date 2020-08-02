@@ -1,0 +1,27 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+int main()
+{
+	ll a,b,n,c[1000001],i,flag=0;
+	for(i=0;i<1000001;i++)
+	c[i]=i*i*i;
+	cin>>n;
+	n=n-9;
+	for(i=2;i*i*i<n;i++)
+	{
+		a=n-i*i*i;
+		b=lower_bound(c,c+1000001,a)-c;
+		if(a==c[b])
+		{
+			flag=1;
+			a=i;
+			break;
+			
+		}
+	}
+	if(flag==1)
+	cout<<1<<" "<<2<<" "<<a<<" "<<b;
+	else
+	cout<<-1;
+}
