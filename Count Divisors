@@ -1,0 +1,19 @@
+#include<bits/stdc++.h>
+#define ll long long int
+#define fast ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+#define endl "\n"
+using namespace std;
+int main()
+{
+    fast;
+    ll i,n,k;
+    cin>>i>>n>>k;
+    ll c=0;
+    for(ll j=i;j<=n;j++)
+    {
+        if(j%k==0)
+            c++;
+    }
+    cout<<c<<endl;
+
+}
