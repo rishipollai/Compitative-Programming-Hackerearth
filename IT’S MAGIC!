@@ -1,0 +1,33 @@
+#include<bits/stdc++.h>
+#define fast ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+#define endl "\n";
+#define ll long long int
+using namespace std;
+int main()
+{
+    fast;
+    ll n;cin>>n;
+    ll a[n],i;
+    for(i=0;i<n;i++) cin>>a[i];
+    ll sum=0;
+    for(i=0;i<n;i++) sum+=a[i];
+    ll mn=1e6,p=0,f=0;;
+    for(i=0;i<n;i++)
+    {
+        ll k=sum-a[i];
+        if(k%7==0)
+        {
+            if(mn>a[i])
+            {
+                mn=a[i];
+                p=i;
+                f=1;
+            }
+        }
+    }
+    if(f==1)
+     { cout<<p<<endl;}
+    else
+     cout<<-1<<endl;
+    
+}
