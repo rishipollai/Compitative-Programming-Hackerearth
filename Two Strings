@@ -1,0 +1,22 @@
+#include<bits/stdc++.h>
+#define fast ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+#define endl "\n";
+#define ll long long int
+using namespace std;
+int main()
+{
+    fast;
+    ll t;cin>>t;
+    while(t--)
+    {
+        string s,sp;
+        cin>>s>>sp;
+        sort(s.begin(),s.end());
+        sort(sp.begin(),sp.end());
+        if(s==sp)
+          {cout<<"YES"<<endl;}
+        else
+           cout<<"NO"<<endl;
+        
+    }
+}
