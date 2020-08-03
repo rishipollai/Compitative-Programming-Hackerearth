@@ -1,0 +1,28 @@
+#include<bits/stdc++.h>
+#define fast ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+#define endl "\n";
+#define ll long long int
+using namespace std;
+int main()
+{
+    fast;
+    ll n;cin>>n;
+    while(n--)
+    {
+        ll k;cin>>k;ll a=0,b=2*k-1;
+        for(ll i=0;i<k;i++)
+        {
+            for(ll j=0;j<2*k;j++)
+            {
+                if(j<=a or b<=j)
+                   {cout<<"*"; }
+                 else
+                   cout<<"#";                 
+            }
+            cout<<endl;
+            a++;b--;
+        }
+        cout<<endl;
+
+    }
+}
