@@ -1,0 +1,40 @@
+#include<bits/stdc++.h>
+#define fast ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+#define endl "\n";
+#define ll long long int
+using namespace std;
+int main()
+{
+    fast;
+    ll t;cin>>t;
+    while(t--)
+    {
+        ll a,b,c,d;
+        cin>>a>>b>>c>>d;
+        ll  e=b,f=c,g=d;
+            ll mn=min(b,c);
+               mn=min(mn,d);
+        ll mk=mn;
+        unordered_map<ll,ll> mp;
+        while(mn<=a)
+        {
+            mp[b]++;
+            mp[c]++;
+            mp[d]++;
+            b=b+e;
+            c=c+f;
+            d=d+g;
+            mn++;
+            
+        }
+        cout<<endl;
+        ll cp=0;
+        for(ll i=mk;i<=a;i++)
+        {
+            if(mp[i]==1)
+               cp++;
+        }
+        cout<<cp<<endl;
+        mp.clear();
+    }
+}
