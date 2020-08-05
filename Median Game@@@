@@ -1,0 +1,23 @@
+#include<bits/stdc++.h>
+#define fast ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+#define endl "\n"
+#define ll long long int
+#define mod 1e6+7
+using namespace std;
+int main()
+{
+    fast;
+    ll t;cin>>t;
+    while(t--)
+    {
+        ll n;cin>>n;
+        ll mn=INT_MAX,mx=INT_MIN;
+        for(ll i=0;i<n;i++)
+        {
+            ll k;cin>>k;
+            mx=max(mx,k);
+            mn=min(mn,k);
+        }
+        cout<<mx+mn<<endl;
+    }
+}
