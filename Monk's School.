@@ -1,0 +1,45 @@
+#include<bits/stdc++.h>
+#define fast ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+#define endl "\n"
+#define ll long long int
+#define mod 1e6+7
+using namespace std;
+bool go(const pair<string,pair<string,ll>> &a,const pair<string,pair<string,ll>> &b)
+{
+         auto &v1=a.second;
+         auto &v2=b.second;
+         if(a.first==b.first)
+             return v1.second<v2.second;
+         return  a.first<b.first;
+}
+int main()
+{
+    fast;
+    ll n,m;cin>>n>>m;
+    vector<string> v;
+    vector<pair<string,pair<string,ll>>> vp;
+    for(ll i=0;i<n;i++) 
+    {
+        string s;cin>>s;
+        v.push_back(s);
+    }
+    for(ll i=0;i<m;i++)
+    {
+        string s;string sp;ll k;
+        cin>>s>>sp>>k;
+        vp.push_back({s,{sp,k}});
+    }
+    sort(v.begin(),v.end());
+    //sort(vp.begin(),vp.end());
+    string kp="";
+    sort(vp.begin(),vp.end(),go);
+    for(auto x:vp)
+    {
+        auto &ap=x.second;
+        if(kp!=x.first)
+            cout<<x.first<<endl;
+        cout<<ap.first<<" "<<ap.second<<endl;
+        kp=x.first;
+    }
+    
+}
