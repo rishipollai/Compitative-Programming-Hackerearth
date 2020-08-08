@@ -1,0 +1,31 @@
+#include<bits/stdc++.h>
+#define fast ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+#define endl "\n"
+#define ll long long int
+#define mod 1e6+7
+using namespace std;
+int main()
+{
+    fast;
+    ll n;cin>>n;
+    ll a[n+10],b[n+10],i,sum=0;
+    for(i=0;i<n;i++)
+    {
+        cin>>a[i];
+        sum+=a[i];
+    }
+    ll avg=sum/n;
+    b[0]=0;
+    for(i=1;i<n;i++)
+    {
+        b[i]=b[i-1]+a[i-1]-avg;
+    }
+    sort(b,b+n);
+    ll m=-b[n/2];
+    ll ans=0;
+    for(i=0;i<n;i++)
+    {
+        ans+=abs(b[i]+m);
+    }
+    cout<<ans<<endl;
+}
