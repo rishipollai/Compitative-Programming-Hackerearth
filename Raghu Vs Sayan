@@ -1,0 +1,36 @@
+#include<bits/stdc++.h>
+#define fast ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+#define endl "\n"
+#define ll long long int
+#define mod 1e6+7
+using namespace std;
+int main()
+{
+    fast;
+    ll t;cin>>t;
+    while(t--)
+    {
+        ll a,b,n;
+        cin>>a>>b>>n;
+        ll ar[n],i;
+        for(i=0;i<n;i++) cin>>ar[i];
+        sort(ar,ar+n);
+        ll c=0,d=0,sum=0;
+        for(i=0;i<n;i++)
+        {
+            sum+=ar[i];
+            if(sum<=a)
+            {c++; }
+            if(sum<=b)
+            {d++; }
+            else
+              break;
+        }
+        if(c>d)
+          cout<<"Raghu Won"<<endl;
+        else if(c<d)
+          cout<<"Sayan Won"<<endl;
+        else if(c==d)
+          cout<<"Tie"<<endl;
+    }
+}
