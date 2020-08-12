@@ -1,0 +1,38 @@
+#include<bits/stdc++.h>
+#define fast ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+#define endl "\n"
+#define ll long long int
+#define mod 1e6+7
+using namespace std;
+bool go(const pair<ll,ll> &a,const pair<ll,ll> &b)
+{
+    if(a.second==b.second)
+       return a.first<b.first;
+    return a.second>b.second;
+}
+int main()
+{
+    fast;
+    ll n,m;cin>>n>>m;
+    vector<pair<ll,ll>> v;
+    ll i;
+    for(i=0;i<n;i++)
+    {
+        ll k,p;cin>>k>>p;
+        v.push_back({k,p});
+    }
+    sort(v.begin(),v.end(),go);
+    ll sum=0;
+    map<ll,ll> mp;
+    for(i=0;i<v.size();i++)
+    {
+        mp[v[i].second]=v[i].first;
+    }
+    for(auto x:mp)
+      sum+=x.second;
+    cout<<sum<<endl;
+}
+
+
+
+
