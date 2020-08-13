@@ -1,0 +1,35 @@
+#include<bits/stdc++.h>
+#define fast ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+#define endl "\n"
+#define ll long long int
+#define mod 1e6+7
+using namespace std;
+int main()
+{
+    fast;
+    ll n;cin>>n;
+    ll a[n],i;
+    for(i=0;i<n;i++) cin>>a[i];
+    set<pair<ll,ll>> st;
+    map<ll,ll> mp;
+    vector<ll> v,vp;
+    for(i=0;i<n;i++)
+    {
+        if(mp.count(a[i])==0)
+        {
+             st.insert({a[i],i});
+        }
+        mp[a[i]]=i;
+    }
+    ll mx=0;
+    for(auto x:mp)
+       v.push_back(x.second);
+    for(auto x:st)
+       vp.push_back(x.second);
+    for(i=0;i<v.size();i++)
+    {
+        mx=max(mx,v[i]+1-vp[i]);
+    }
+    cout<<mx<<endl;
+      
+}
