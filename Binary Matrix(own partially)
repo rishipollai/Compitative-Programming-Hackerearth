@@ -1,0 +1,59 @@
+#include<bits/stdc++.h>
+#define fast ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+#define endl "\n"
+#define ll long long int
+#define mod 1e6+7
+using namespace std;
+int main()
+{
+    fast;
+    ll m,n;
+    cin>>m>>n;
+    ll i,j;
+    ll a[m][n],sum=0;
+    vector<ll> v;
+    vector<pair<ll,ll>> vv;
+    for(i=0;i<m;i++)
+    {
+        ll b;
+        cin>>b;
+        while(b!=0)
+        {
+            ll k=b%10;
+            v.push_back(k);
+            b=b/10;
+        }
+        reverse(v.begin(),v.end());
+        ll p=1;
+        for(auto x:v)
+        {
+            
+            //cout<<x<<" "<<pow(2,v.size()-p)<<endl;
+            sum+=x*pow(2,v.size()-p);
+            //cout<<sum<<" ";
+           // cout<<endl;
+            p++;
+        }
+
+        vv.push_back({sum,i+1});
+        
+        sum=0;
+        v.clear();
+        cout<<endl;
+    }
+    sort(vv.begin(),vv.end(),greater<pair<ll,ll>>());
+    ll t=vv.size();
+    for(auto x:vv)
+    {
+        cout<<x.first<<" "<<x.second<<endl;
+    }
+    if(vv[0].first!=vv[1].first)
+    {
+        cout<<vv[0].second<<endl;
+    }
+    else
+    {
+        cout<<vv[t-1].second<<endl;
+    }
+    
+}
