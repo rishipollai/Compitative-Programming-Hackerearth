@@ -1,0 +1,29 @@
+#include<bits/stdc++.h>
+#define fast ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+#define endl "\n"
+#define ll long long int
+#define mod 1e6+7
+using namespace std;
+int main()
+{
+    fast;
+    ll m,n;cin>>m>>n;
+    string s[m];
+    ll i;
+    for(i=0;i<m;i++)
+    {
+        cin>>s[i];
+    }
+    string str=s[0];
+    ll indx=0;
+    for(i=0;i<m;i++)
+    {
+        if(s[i].compare(str)>0)
+        {
+            str=s[i];
+            indx =i;
+        }
+    }
+    cout<<indx+1<<endl;
+    
+}
