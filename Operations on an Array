@@ -1,0 +1,27 @@
+#include<bits/stdc++.h>
+#define fast ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+#define endl "\n"
+#define ll long long int
+#define mod 1e6+7
+using namespace std;
+int main()
+{
+    fast;
+    ll n;cin>>n;
+    ll a[n],i,j;
+    for(i=0;i<n;i++) cin>>a[i];
+    sort(a,a+n);
+    ll b[n]={0};
+    for(i=n-1;i>=0;i--)
+    {
+        for(j=0;j<n;j++)
+        {
+            b[i]+=min(abs(a[i]-a[j]),a[j]);
+        }
+    }
+    ll k=*min_element(b,b+n);
+    cout<<k<<endl;
+    
+    
+    
+}
