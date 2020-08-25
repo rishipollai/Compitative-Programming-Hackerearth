@@ -1,0 +1,24 @@
+#include<bits/stdc++.h>
+#define fast ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+#define endl "\n"
+#define ll long long int
+#define mod 1e6+7
+using namespace std;
+int main()
+{
+    fast;
+    ll n,m;cin>>n>>m;
+    ll a[n],i;
+    for(i=0;i<n;i++)     
+        cin>>a[i];
+    sort(a,a+n);
+    ll k=0;
+    ll b[n]={0};
+    b[0]=a[0];
+    for(i=1;i<n;i++)
+    {
+        b[i]=a[i]+b[i-1];
+    }
+    k=upper_bound(b,b+n,m)-b;
+    cout<<k<<endl;
+}
