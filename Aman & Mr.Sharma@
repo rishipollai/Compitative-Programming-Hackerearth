@@ -1,0 +1,23 @@
+#include <iostream>
+#include <string>
+using namespace std;
+ 
+int main(){
+	
+	int days;
+	cin >> days;
+	int r, x;
+	int count = 0;
+	double perimeter = 0;
+	
+	while(days--){
+		cin >> r >> x;
+		perimeter = (double)2 * 22 / 7 * r;
+		if(perimeter <= 100 * x)
+			count++;
+	}
+	
+	cout << count << endl;
+	
+	return 0;
+}
