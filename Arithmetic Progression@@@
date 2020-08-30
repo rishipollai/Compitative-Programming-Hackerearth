@@ -1,0 +1,26 @@
+#include<bits/stdc++.h>
+#define fast ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+#define endl "\n"
+#define ll long long int
+#define mod 1e6+7
+using namespace std;
+int main()
+{
+    fast;
+    ll t;cin>>t;
+    while(t--)
+    {
+        ll m,n,p;cin>>m>>n>>p;
+        ll k=0;
+        k=abs((2*n)-(p+m));
+        if(k%2==0)
+        {
+            cout<<k/2<<endl;
+        }
+        else
+        {
+            cout<<(k+1)/2<<endl;
+        }
+    }
+}
+
