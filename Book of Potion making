@@ -1,0 +1,37 @@
+#include<bits/stdc++.h>
+#define fast ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+#define endl "\n"
+#define ll long long int
+#define mod 1e6+7
+using namespace std;
+int main()
+{
+    fast;
+    ll n;cin>>n;
+    ll a=n;
+    ll p=0,i,d=0;
+    ll k=0;
+    while(n!=0)
+    {
+        n=n/10;
+        k++;
+    }
+    //cout<<a<<endl;
+    for(i=k;i>=1;i--)
+    {
+        p=a%10;
+        //cout<<p<<" ";
+        d+=p*i;
+        //cout<<i<<" "<<d<<endl;
+        a=a/10;
+    }
+    //cout<<d<<endl;
+    if(d%11==0)
+    {
+        cout<<"Legal ISBN"<<endl;
+    }
+    else
+    {
+        cout<<"Illegal ISBN"<<endl;
+    }
+}
