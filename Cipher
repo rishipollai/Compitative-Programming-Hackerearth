@@ -1,0 +1,25 @@
+n=input()
+k=len(n)
+m=int(input())
+str='\n'
+for i in range(k):
+    c=ord(n[i])
+    if(n[i].isalnum()):
+        for j in range(0,m):
+            c=c+1
+
+            if (c==123):
+                c=97
+            elif (c==91):
+                c=65
+            elif (c==58):
+                c=48
+            if (j==(m-1)):
+                str+=chr(c)
+    else:
+        str+=chr(c)
+
+print(str)
+                
+
+
