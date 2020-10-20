@@ -1,0 +1,15 @@
+n=int(input())
+lis=list(map(int,input().split()))
+l1=[]
+sum1=sum(lis)
+for i in range(len(lis)):
+    if((sum1-lis[i])%7==0):
+        l1.append(lis[i])
+
+if len(l1)==0:
+    print(-1)
+else:
+    print(lis.index(min(l1)))
+
+    
+     
