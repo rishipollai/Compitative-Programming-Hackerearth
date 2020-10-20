@@ -1,0 +1,11 @@
+s=input()
+k=1
+sum=0
+for i in s:
+    sum+=int(i)*k
+    k+=1
+if sum%11==0:
+    print("Legal ISBN")
+else:
+    print("Illegal ISBN")
+    
