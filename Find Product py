@@ -1,0 +1,8 @@
+x=int(input())
+inp=input().split(" ")
+ans=1
+for i in range(0,x):
+    ans=(ans* int(inp[i])%1000000007)
+print(ans)
+    
+
