@@ -1,0 +1,48 @@
+#include<bits/stdc++.h>
+#define fast ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+#define endl "\n"
+#define ll long long int
+#define mod 1e6+7
+using namespace std;
+int main()
+{
+    fast;
+    string s;cin>>s;
+    stack<char> st;
+    ll k=s.size();
+    vector<char> v;
+    for(ll i=0;i<k;i++)
+    {
+       if(st.empty())
+       {
+           st.push(s[i]);
+       }
+       else if(st.top()==s[i])
+       {
+           st.pop();
+       }
+       else
+       {
+           st.push(s[i]);
+       }
+       
+    }
+    
+    if(st.empty())
+    {
+        cout<<"Empty String";
+    }
+    else {
+        while(!st.empty())
+        {
+        v.push_back(st.top());
+        st.pop();
+        }
+    reverse(v.begin(),v.end());
+       for(auto x:v)
+         cout<<x;
+    }
+    
+}
+
+
