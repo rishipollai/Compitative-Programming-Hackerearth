@@ -1,0 +1,53 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define pcx putchar_unlocked
+#define gcx getchar_unlocked
+#define mod 1000000007 
+typedef long int lint;
+ 
+lint getli () {
+	lint n =0;
+	register int c = gcx();
+	while(c<'0' || c>'9') c = gcx();
+	while(c>='0' && c<='9') {
+		n = n * 10 + c-'0';
+		c = gcx();
+	}
+	return n;
+}
+void putli (lint n, char lc) {
+	if (0 == n) {
+		pcx('0'); if(lc) pcx(lc); return;
+	}
+	char s[24]; lint rdi =-1;
+	while (n) {
+		s[++rdi] = '0' + n % 10;
+		n /= 10;
+	}
+	while (rdi>=0) pcx(s[rdi--]);
+	if(lc) pcx(lc);
+}
+ 
+int main () {
+	lint T = getli() +1;
+	lint NPS[10001]; NPS[0] =0;
+	lint QL[10000];
+	lint QR[10000];
+	while(--T) {
+        lint N = getli();
+        for (lint ni=1; ni<=N; ++ni) {
+            NPS[ni] = (NPS[ni-1] + getli()) % mod;
+        }
+        lint Q = getli();
+        for (lint li=0; li<Q; ) QL[li++] = getli();
+        for (lint ri=0; ri<Q; ) QR[ri++] = getli();
+        
+        for (lint ri=0; ri<Q; ++ri) {
+            lint ans = (((QR[ri]/N)%mod)*NPS[N]%mod+NPS[QR[ri]%N])%mod;
+            ans=(ans-((((QL[ri]-1)/N)%mod)*NPS[N]%mod+NPS[(QL[ri]-1)%N])%mod+mod)%mod;
+            putli(ans, ' ');
+        }
+        pcx('\n');
+	}
+	return 0;
+}
